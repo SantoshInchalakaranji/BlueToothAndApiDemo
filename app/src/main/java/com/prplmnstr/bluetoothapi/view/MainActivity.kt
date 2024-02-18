@@ -39,6 +39,7 @@ class MainActivity : ComponentActivity() {
         bluetoothManager?.adapter
     }
 
+    // Check if Bluetooth is enabled
     private val isBluetoothEnabled: Boolean
         get() = bluetoothAdapter?.isEnabled == true
 
@@ -49,22 +50,24 @@ class MainActivity : ComponentActivity() {
 
         Log.e("TAG", "main: running")
 
+        // Activity Result Launcher for enabling Bluetooth
         val enableBluetoothLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { /* Not needed */ }
 
 
+        // Activity Result Launcher for requesting permissions
         val permissionLauncher = registerForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) { perms ->
+            // Check if Bluetooth permissions are granted
             val canEnableBluetooth = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 perms[Manifest.permission.BLUETOOTH_CONNECT] == true
             } else true
 
 
-            Log.e("TAG", "bluetooth: $canEnableBluetooth")
+            // If Bluetooth permissions are granted and Bluetooth is not enabled, request to enable Bluetooth
             if (canEnableBluetooth && !isBluetoothEnabled) {
-
                 enableBluetoothLauncher.launch(
                     Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
                 )
@@ -72,6 +75,7 @@ class MainActivity : ComponentActivity() {
 
         }
 
+        // Launch permission request based on Android version
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             permissionLauncher.launch(
                 arrayOf(
@@ -97,7 +101,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             BlueToothChatTheme {
 
-                CheckLocationPermission(enableBluetoothLauncher)
+                CheckAndRequestLocationPermission(enableBluetoothLauncher)
 
                 Surface(
                     color = MaterialTheme.colorScheme.background
@@ -120,6 +124,7 @@ class MainActivity : ComponentActivity() {
             return
         }
 
+        // Launch the intent to make the device discoverable
             val requestCode = 1;
             val discoverableIntent: Intent = Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE).apply {
                 putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300)
@@ -130,7 +135,7 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    private fun CheckLocationPermission(enableBluetoothLauncher: ActivityResultLauncher<Intent>) {
+    private fun CheckAndRequestLocationPermission(enableBluetoothLauncher: ActivityResultLauncher<Intent>) {
         var dialogOpen by remember { mutableStateOf(true) }
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S && !isLocationEnabled(this)) {
             if (dialogOpen) {
@@ -147,9 +152,13 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-
+    /**
+     * Check if location is enabled.
+     *
+     * @param context The application context.
+     * @return True if location is enabled, false otherwise.
+     */
     fun isLocationEnabled(context: Context): Boolean {
-
         val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)

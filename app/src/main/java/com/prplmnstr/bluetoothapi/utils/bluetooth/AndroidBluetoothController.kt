@@ -42,6 +42,31 @@ import java.io.IOException
 import java.util.UUID
 
 
+/**
+ * Implementation of [BluetoothController] for Android devices.
+ *
+ * This class provides functionality to manage Bluetooth connections,
+ * discover devices, and send/receive messages.
+ * It requires the necessary Bluetooth permissions to perform these operations.
+ *
+ * @property context The application context.
+ * @property bluetoothManager The Bluetooth manager responsible for managing Bluetooth operations.
+ * @property bluetoothAdapter The Bluetooth adapter for the device.
+ * @property dataTransferService The service for transferring data over Bluetooth.
+ * @property _isConnected A mutable state flow representing the connection status.
+ * @property _connectedDevice A mutable state flow representing the connected Bluetooth device.
+ * @property _scannedDevices A mutable state flow representing the list of scanned Bluetooth devices.
+ * @property _pairedDevices A mutable state flow representing the list of paired Bluetooth devices.
+ * @property _errors A mutable shared flow representing error messages.
+ * @property foundDeviceReceiver The broadcast receiver for handling discovered Bluetooth devices.
+ * @property bluetoothStateReceiver The broadcast receiver for handling Bluetooth state changes.
+ * @property currentServerSocket The current Bluetooth server socket.
+ * @property currentClientSocket The current Bluetooth client socket.
+ */
+
+
+
+
 @SuppressLint("MissingPermission")
 class AndroidBluetoothController(
     private val context: Context

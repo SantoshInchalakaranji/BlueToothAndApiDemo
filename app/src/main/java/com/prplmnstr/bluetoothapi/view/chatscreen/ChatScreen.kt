@@ -53,6 +53,23 @@ import kotlin.reflect.KSuspendFunction0
 import com.prplmnstr.bluetoothapi.R
 
 
+/**
+ * Composable function for the chat screen.
+ *
+ * @param navController The NavController used for navigation.
+ * @param state The current state of the Bluetooth UI.
+ * @param sendTextMessage Callback function to send a text message.
+ * @param sendAudioMessage Callback function to send an audio message.
+ * @param connectToDevice Callback function to connect to a Bluetooth device.
+ * @param disconnectFromDevice Callback function to disconnect from the currently connected device.
+ * @param startRecording Coroutine function to start audio recording.
+ * @param stopRecording Coroutine function to stop audio recording.
+ * @param createAudioFile Function to create an audio file.
+ * @param startPlaying Callback function to start playing audio.
+ * @param stopPlaying Callback function to stop playing audio.
+ * @param seekTo Callback function to seek to a specific position in audio playback.
+ */
+
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun ChatScreen(

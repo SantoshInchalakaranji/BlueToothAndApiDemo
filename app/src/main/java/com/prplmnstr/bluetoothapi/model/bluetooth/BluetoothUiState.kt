@@ -1,5 +1,9 @@
 package com.prplmnstr.bluetoothapi.model.bluetooth
 
+/**
+ * Represents the UI state related to Bluetooth functionality.
+ */
+
 data class BluetoothUiState(
     val scannedDevices: List<BluetoothDevice> = emptyList(),
     val pairedDevices: List<BluetoothDevice> = emptyList(),

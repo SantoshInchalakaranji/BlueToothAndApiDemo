@@ -18,6 +18,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import javax.inject.Singleton
 
+/**
+ * Provides dependencies for the application.
+ *
+ * This module provides dependencies that are used throughout the application.
+ * It is installed in the SingletonComponent to ensure that these dependencies
+ * have a global scope and are available throughout the entire application's lifecycle.
+ */
+
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {

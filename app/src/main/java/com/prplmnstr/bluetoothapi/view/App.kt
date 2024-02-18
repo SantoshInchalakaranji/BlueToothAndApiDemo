@@ -54,11 +54,12 @@ fun App(
         composable(
             Routes.CHAT_SCREEN
         ) {
-            /* Directly transferring viewmodel to the composible is not recommended,
+            /** Directly transferring viewmodel to the composible is not recommended,
             not a best practice according to official documentation. so passed only required
             functions to the screens.
 
              */
+
             ChatScreen(
                 navController, state,
                 viewModel::sendMessage,
@@ -80,7 +81,6 @@ fun App(
                 viewModel::startScan,
                 viewModel::stopScan,
                 viewModel::waitForIncomingConnections,
-                viewModel::connectToDevice
             )
         }
         composable(Routes.SPLASH_SCREEN) {

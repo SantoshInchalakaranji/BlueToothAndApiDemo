@@ -28,6 +28,17 @@ import com.prplmnstr.bluetoothapi.view.Routes
 import com.prplmnstr.bluetoothapi.view.devicescreen.components.FabWithBottomSheet
 import com.prplmnstr.bluetoothapi.view.devicescreen.components.RowWithProgress
 
+
+/**
+ * Composable function for the device screen.
+ *
+ * @param navController The NavController used for navigation.
+ * @param state The current state of the Bluetooth UI.
+ * @param onStartScan Callback function to start scanning for Bluetooth devices.
+ * @param onStopScan Callback function to stop scanning for Bluetooth devices.
+ * @param onStartServer Callback function to start the Bluetooth server.
+ */
+
 @Composable
 fun DeviceScreen(
     navController: NavController,
@@ -35,7 +46,7 @@ fun DeviceScreen(
     onStartScan: () -> Unit,
     onStopScan: () -> Unit,
     onStartServer: () -> Unit,
-    onDeviceClick: (BluetoothDevice) -> Unit
+
 ) {
     if (state.isConnected) {
         navController.navigate(

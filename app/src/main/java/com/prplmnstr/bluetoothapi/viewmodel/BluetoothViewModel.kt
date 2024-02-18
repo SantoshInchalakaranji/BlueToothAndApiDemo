@@ -25,6 +25,21 @@ import java.io.File
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * ViewModel responsible for managing Bluetooth connectivity and data exchange.
+ *
+ * This ViewModel communicates with the [BluetoothController] to establish connections,
+ * send and receive messages, and handle Bluetooth-related events.
+ * It also utilizes an [AndroidAudioPlayer] and [AndroidAudioRecorder] for audio playback and recording.
+ *
+ * @property bluetoothController The [BluetoothController] responsible for handling Bluetooth operations.
+ * @property audioPlayer The [AndroidAudioPlayer] for audio playback.
+ * @property audioRecorder The [AndroidAudioRecorder] for audio recording.
+ * @property cacheDir The cache directory for storing audio files.
+ * @property audioFile The audio file being recorded or played.
+ */
+
+
 @HiltViewModel
 class BluetoothViewModel @Inject constructor(
     @Singleton

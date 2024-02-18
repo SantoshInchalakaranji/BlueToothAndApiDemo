@@ -10,6 +10,21 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
+/**
+ * ViewModel responsible for managing news data.
+ *
+ * This ViewModel communicates with the [NewsRepository] to fetch news articles.
+ * It exposes the list of news articles, loading state, and error messages to the UI.
+ *
+ * @property repository The [NewsRepository] responsible for handling news data operations.
+ * @property curPage The current page of news articles being loaded.
+ * @property newsList The list of news articles.
+ * @property loadError The error message encountered during data loading.
+ * @property isLoading Indicates whether data is currently being loaded.
+ * @property endReached Indicates whether the end of the news list has been reached.
+ */
+
 @HiltViewModel
 class NewsViewModel @Inject constructor(
     private val repository: NewsRepository
