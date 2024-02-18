@@ -29,7 +29,6 @@ Brief description of the project.
 
 - **API Integration:**
   - Utilizes Retrofit to make API calls.
-  -  Added Unit test cases to varify api calls.
   - Although the current API provides limited data, the app's architecture is designed to support paging for APIs with larger datasets.
     
 - **Testing:**
