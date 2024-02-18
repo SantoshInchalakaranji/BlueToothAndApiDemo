@@ -84,6 +84,7 @@ dependencies {
     implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
 
 
+
     val lifecycleVersion = "2.7.0"
     // ViewModel utilities for Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
@@ -92,8 +93,20 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycleVersion")
 
     val nav_version = "2.7.7"
-
     implementation("androidx.navigation:navigation-compose:$nav_version")
+
+    //gson
+    implementation ("com.google.code.gson:gson:2.10.1")
+
+    //retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+
+    // Coil
+    implementation ("io.coil-kt:coil-compose:1.4.0")
+
+
 }
 kapt {
     correctErrorTypes = true
