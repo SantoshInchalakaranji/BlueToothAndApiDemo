@@ -1,4 +1,4 @@
-# Project Name
+# Bluetooth Connectivity and API demo
 
 Brief description of the project.
 
