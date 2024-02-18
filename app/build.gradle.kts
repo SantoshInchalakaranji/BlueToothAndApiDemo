@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.prplmnstr.bluetoothchat"
+    namespace = "com.prplmnstr.bluetoothapi"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.prplmnstr.bluetoothchat"
+        applicationId = "com.prplmnstr.bluetoothapi"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
