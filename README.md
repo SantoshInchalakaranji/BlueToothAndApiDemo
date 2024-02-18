@@ -47,6 +47,8 @@ Brief description of the project.
 * viewmodel
 * MainActivity
 
+  <img src="https://github.com/SantoshInchalakaranji/ShoppingApp/blob/master/Screenshots/mvvm.png" /> 
+
  
 
 ## Technologies/libraries Used
