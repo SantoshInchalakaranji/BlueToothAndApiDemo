@@ -87,7 +87,5 @@ To use the app, follow these steps:
    - Start sharing data between the devices.
 
 ## Screenshots
-<img src="https://github.com/SantoshInchalakaranji/BlueToothAndApiDemo/blob/master/screenshots/splash.jpg" />
-<img src="https://github.com/SantoshInchalakaranji/BlueToothAndApiDemo/blob/master/screenshots/news.jpg" />
-<img src="https://github.com/SantoshInchalakaranji/BlueToothAndApiDemo/blob/master/screenshots/connect.jpg" />
-<img src="https://github.com/SantoshInchalakaranji/BlueToothAndApiDemo/blob/master/screenshots/chat.jpg" />
+<img src="https://github.com/SantoshInchalakaranji/BlueToothAndApiDemo/blob/master/screenshots/bluetoothapi.png" />
+
