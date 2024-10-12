@@ -1,6 +1,6 @@
 # Bluetooth Connectivity and API demo
 
-Brief description of the project.
+
 
 ## Table of Contents
 
